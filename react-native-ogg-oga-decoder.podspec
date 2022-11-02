@@ -14,7 +14,9 @@ Pod::Spec.new do |s|
   s.platforms    = { :ios => "10.0" }
   s.source       = { :git => "https://github.com/0x454447415244/react-native-ogg-oga-decoder.git", :tag => "#{s.version}" }
 
-  s.source_files = "ios/**/*.{h,m,mm}"
+  s.source_files = "ios/**/*.{h,m,mm,c,cpp}", "ios/OggDecoder/*/*.{h,m,c,cpp}", 
+  s.public_header_files = "ios/OggDecoder/include/*.h", "ios/ogg.xcframework/ios-arm64/ogg.xcframework/Headers/*.h", "ios/vorbis.xcframework/ios-arm64/vorbis.xcframework/Headers/*.h"
+  s.vendored_frameworks = 'ios/vorbis.xcframework', 'ios/ogg.xcframework'
 
   s.dependency "React-Core"
 
@@ -23,8 +25,11 @@ Pod::Spec.new do |s|
     s.compiler_flags = folly_compiler_flags + " -DRCT_NEW_ARCH_ENABLED=1"
     s.pod_target_xcconfig    = {
         "HEADER_SEARCH_PATHS" => "\"$(PODS_ROOT)/boost\"",
-        "CLANG_CXX_LANGUAGE_STANDARD" => "c++17"
+        #"CLANG_CXX_LANGUAGE_STANDARD" => "c++17"
+        'CLANG_CXX_LANGUAGE_STANDARD' => 'c++11',
+        'CLANG_CXX_LIBRARY' => 'libc++'
     }
+    s.library = 'c++'
 
     s.dependency "React-Codegen"
     s.dependency "RCT-Folly"

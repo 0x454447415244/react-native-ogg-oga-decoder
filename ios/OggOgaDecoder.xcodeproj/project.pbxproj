@@ -3,11 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5E555C0D2413F4C50049A1A2 /* OggOgaDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B5891CC2AC0600A0062D /* OggOgaDecoder.m */; };
+		5F82E3C0291051900055DF46 /* OggOgaDecoder.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5F82E3BE291051900055DF46 /* OggOgaDecoder.mm */; };
+		5F82E3C3291097770055DF46 /* ogg.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F82E3C2291097760055DF46 /* ogg.xcframework */; };
+		5F82E3C5291097840055DF46 /* vorbis.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F82E3C4291097840055DF46 /* vorbis.xcframework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,8 +26,11 @@
 
 /* Begin PBXFileReference section */
 		134814201AA4EA6300B7C361 /* libOggOgaDecoder.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libOggOgaDecoder.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		B3E7B5881CC2AC0600A0062D /* OggOgaDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OggOgaDecoder.h; sourceTree = "<group>"; };
-		B3E7B5891CC2AC0600A0062D /* OggOgaDecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OggOgaDecoder.m; sourceTree = "<group>"; };
+		5F82E3BE291051900055DF46 /* OggOgaDecoder.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OggOgaDecoder.mm; sourceTree = "<group>"; };
+		5F82E3BF291051900055DF46 /* OggOgaDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OggOgaDecoder.h; sourceTree = "<group>"; };
+		5F82E3C1291059170055DF46 /* OggDecoderObjC */ = {isa = PBXFileReference; lastKnownFileType = folder; path = OggDecoderObjC; sourceTree = "<group>"; };
+		5F82E3C2291097760055DF46 /* ogg.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = ogg.xcframework; sourceTree = "<group>"; };
+		5F82E3C4291097840055DF46 /* vorbis.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = vorbis.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +38,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F82E3C5291097840055DF46 /* vorbis.xcframework in Frameworks */,
+				5F82E3C3291097770055DF46 /* ogg.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,8 +57,11 @@
 		58B511D21A9E6C8500147676 = {
 			isa = PBXGroup;
 			children = (
-				B3E7B5881CC2AC0600A0062D /* OggOgaDecoder.h */,
-				B3E7B5891CC2AC0600A0062D /* OggOgaDecoder.m */,
+				5F82E3C4291097840055DF46 /* vorbis.xcframework */,
+				5F82E3C2291097760055DF46 /* ogg.xcframework */,
+				5F82E3C1291059170055DF46 /* OggDecoderObjC */,
+				5F82E3BF291051900055DF46 /* OggOgaDecoder.h */,
+				5F82E3BE291051900055DF46 /* OggOgaDecoder.mm */,
 				134814211AA4EA7D00B7C361 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -113,7 +123,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B3E7B58A1CC2AC0600A0062D /* OggOgaDecoder.m in Sources */,
+				5F82E3C0291051900055DF46 /* OggOgaDecoder.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

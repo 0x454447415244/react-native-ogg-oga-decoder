@@ -1,18 +1,23 @@
 #import "OggOgaDecoder.h"
 
+#import "OGGDecoder.h"
+
 @implementation OggOgaDecoder
 RCT_EXPORT_MODULE()
 
 // Example method
 // See // https://reactnative.dev/docs/native-modules-ios
-RCT_REMAP_METHOD(multiply,
-                 multiplyWithA:(double)a withB:(double)b
+RCT_REMAP_METHOD(decode,
+                 withOggFile:(NSString *)oggFile
                  withResolver:(RCTPromiseResolveBlock)resolve
                  withRejecter:(RCTPromiseRejectBlock)reject)
 {
-  NSNumber *result = @(a * b);
-
-  resolve(result);
+    
+    OGGDecoder * decoder = [[OGGDecoder alloc] init];
+    [decoder decode:[NSURL URLWithString:oggFile] completion:^(NSURL* _Nullable outputFile){
+        NSLog(@"%@", [outputFile absoluteString]);
+        resolve([outputFile absoluteString]);
+    }];
 }
 
 // Don't compile this code when we build for the old architecture.

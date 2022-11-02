@@ -17,6 +17,6 @@ const OggOgaDecoder = NativeModules.OggOgaDecoder
       }
     );
 
-export function multiply(a: number, b: number): Promise<number> {
-  return OggOgaDecoder.multiply(a, b);
+export function decode(oggFile: string): Promise<string> {
+  return OggOgaDecoder.decode(oggFile);
 }
